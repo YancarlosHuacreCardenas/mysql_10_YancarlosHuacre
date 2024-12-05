@@ -56,6 +56,7 @@ CREATE TABLE users (
 
 ````
 ### INSERTAR USUARIOS EN LA TABLAT 'USERS'
+
 ```sql
 INSERT INTO users(name, surnames, identification_document, document_number, email, cellular) 
 VALUES 
@@ -65,11 +66,13 @@ VALUES
 ````
 
 ### LISTAR TODOS LOS USUARIOS
+
 ```sql
 SELECT * FROM users;
 ````
 
 ### LISTAR USUARIOS CON SU TIPO Y NÚMERO DE DOCUMENTO
+
 ```sql
 SELECT name, surnames, identification_document, document_number FROM users;
 ````
@@ -97,11 +100,13 @@ WHERE ID = 2;
 ````
 
 ### AÑADIR COLUMNA 'ACTIVO' PARA ELIMINACIÓN LÓGICA (OPCIONAL)
+
 ```sql
 ALTER TABLE users ADD COLUMN activo BOOLEAN DEFAULT TRUE;
 ````
 
 ### MARCAR A UN USUARIO COMO INACTIVO
+
 ```sql
 UPDATE users 
 SET activo = FALSE 
@@ -109,12 +114,14 @@ WHERE id = 3;
 ````
 
 ### ELIMINAR UN USUARIO DE FORMA PERMANENTE
+
 ```sql
 DELETE FROM users 
 WHERE id = 3;
 ````
 
 ### VERIFICAR LA TABLAT DE USUARIOS
+
 ```sql
 SELECT * FROM users;
 ````
