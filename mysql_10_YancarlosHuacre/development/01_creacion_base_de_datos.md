@@ -1,13 +1,15 @@
 # BASE DE DATOS EN MYSQL
-
 1. [MYSQL](#mysql)
 2. [Gestión de base de datos](#gestion-de-base-de-datos)
    * [Crear base de datos](#crear-base-de-datos)
-   * [Archivos físicos de la base de datos](#archivos-fisicos-de-la-base-de-datos)
-   * [Poner en uso de la base de datos](#poner-en-uso-de-la-base-de-datos)
-   * [Inventario de base de datos](#inventario-de-base-de-datos)
-   * [Eliminar base de datos](#eliminar-base-de-datos)
-3. [Creación de base de datos PRO](#creacion-de-base-de-datos-pro)
+   *  [CREAR LA TABLA 'USERS' BASADA EN TU ESTRUCTURA](#crear-base-de-datos)
+   *   [INSERTAR USUARIOS EN LA TABLAT 'USERS'](#crear-base-de-datos)
+   *    [INVENTARIO DE BASE DE DATOS](#crear-base-de-datos)
+   *     [ELIMINAR BASE DE DATOS](#crear-base-de-datos)
+   *  [Crear base de datos](#crear-base-de-datos)
+   *   [Crear base de datos](#crear-base-de-datos)
+   *    [Crear base de datos](#crear-base-de-datos)
+   *     [Crear base de datos](#crear-base-de-datos)
 
 ### MySQL
 - Es uno de los SGBD más populares en el mundo.
@@ -58,45 +60,57 @@ VALUES
 ('Ana', 'Martinez', 'DNI', '87654321', 'ana.martinez@email.com', NULL);
 ````
 
-### INVENTARIO DE BASE DE DATOS
-
-1. Sintaxis para listar las base de datos:
-
-````SQL
-SHOW DATABASES;
+### LISTAR TODOS LOS USUARIOS
+```sql
+SELECT * FROM users;
 ````
 
-### ELIMINAR BASE DE DATOS
-
-1. Antes de eliminar una base de datos, esta no debe estar en uso.
-2. Para saber que base de datos está en uso utilice: SELECT DATABASE();
-3. Poner otra base de datos en uso: USE sakila;
-4. Para eliminar una base de datos utilice DROP DATABASE.
-5. Sintaxis para eliminar una base de datos:
-
-````SQL
-DROP DATABASE nombre_de_tu_base_de_datos;
+### LISTAR USUARIOS CON SU TIPO Y NÚMERO DE DOCUMENTO
+```sql
+SELECT name, surnames, identification_document, document_number FROM users;
 ````
 
-6. Ejemplo:
+### BUSCAR UN USUARIO POR CORREO ELECTRÓNICO
 
-````SQL
-DROP DATABASE dbConsultas_Carreras;
+```sql
+SELECT * FROM users WHERE name = 'Carlos';
 ````
 
-7. Verificar si se ha eliminado haciendo un listado de base de datos.
+### ACTUALIZAR EL NÚMERO DE CELULAR DE UN USUARIO
 
-````SQL
-SHOW DATABASES;
+```sql
+UPDATE users 
+SET cellular = '999888777' 
+WHERE ID = 1;
 ````
 
-8. Tener presente que el eliminado es una operación irreversible.
+### ACTUALIZAR EL CORREO DE UN USUARIO
 
-## CREACION DE BASE DE DATOS PRO
+```sql
+UPDATE users 
+SET email = 'lucia.new@email.com' 
+WHERE ID = 2;
+````
 
-````SQL
-CREATE DATABASE IF NOT EXISTS dbConsultas_Carreras 
-CHARACTER SET utf8mb4 
-COLLATE utf8mb4_spanish_ci;
-USE dbConsultas_Carreras;
+### AÑADIR COLUMNA 'ACTIVO' PARA ELIMINACIÓN LÓGICA (OPCIONAL)
+```sql
+ALTER TABLE users ADD COLUMN activo BOOLEAN DEFAULT TRUE;
+````
+
+### MARCAR A UN USUARIO COMO INACTIVO
+```sql
+UPDATE users 
+SET activo = FALSE 
+WHERE id = 3;
+````
+
+### ELIMINAR UN USUARIO DE FORMA PERMANENTE
+```sql
+DELETE FROM users 
+WHERE id = 3;
+````
+
+### VERIFICAR LA TABLAT DE USUARIOS
+```sql
+SELECT * FROM users;
 ````
