@@ -1,15 +1,19 @@
 # BASE DE DATOS EN MYSQL
-1. [MYSQL](#mysql)
+
+1. [MYSQL](https://www.mysql.com/)
 2. [Gestión de base de datos](#gestion-de-base-de-datos)
    * [Crear base de datos](#crear-base-de-datos)
-   *  [CREAR LA TABLA 'USERS' BASADA EN TU ESTRUCTURA](#crear-base-de-datos)
-   *   [INSERTAR USUARIOS EN LA TABLAT 'USERS'](#crear-base-de-datos)
-   *    [INVENTARIO DE BASE DE DATOS](#crear-base-de-datos)
-   *     [ELIMINAR BASE DE DATOS](#crear-base-de-datos)
-   *  [Crear base de datos](#crear-base-de-datos)
-   *   [Crear base de datos](#crear-base-de-datos)
-   *    [Crear base de datos](#crear-base-de-datos)
-   *     [Crear base de datos](#crear-base-de-datos)
+   * [CREAR LA TABLA 'USERS' BASADA EN TU ESTRUCTURA](#crear-la-tabla-users-basada-en-tu-estructura)
+   * [INSERTAR USUARIOS EN LA TABLA 'USERS'](#insertar-usuarios-en-la-tabla-users)
+   * [LISTAR TODOS LOS USUARIOS](#listar-todos-los-usuarios)
+   * [LISTAR USUARIOS CON SU TIPO Y NÚMERO DE DOCUMENTO](#listar-usuarios-con-su-tipo-y-numero-de-documento)
+   * [BUSCAR UN USUARIO POR CORREO ELECTRÓNICO](#buscar-un-usuario-por-correo-electronico)
+   * [ACTUALIZAR EL NÚMERO DE CELULAR DE UN USUARIO](#actualizar-el-numero-de-celular-de-un-usuario)
+   * [ACTUALIZAR EL CORREO DE UN USUARIO](#actualizar-el-correo-de-un-usuario)
+   * [AÑADIR COLUMNA 'ACTIVO' PARA ELIMINACIÓN LÓGICA (OPCIONAL)](#anadir-columna-activo-para-eliminacion-logica-opcional)
+   * [MARCAR A UN USUARIO COMO INACTIVO](#marcar-a-un-usuario-como-inactivo)
+   * [ELIMINAR UN USUARIO DE FORMA PERMANENTE](#eliminar-un-usuario-de-forma-permanente)
+   * [VERIFICAR LA TABLA DE USUARIOS](#verificar-la-tabla-de-usuarios)
 
 ### MySQL
 - Es uno de los SGBD más populares en el mundo.
@@ -20,7 +24,7 @@
 
 ---
 
-## GESTIÓN DE BASE DE DATOS
+### GESTIÓN DE BASE DE DATOS
 - Es el contenedor principal de todos los objetos de una base de datos.
 - *Objetos:* tablas, vistas, cursores, índices, procedimientos almacenados, etc.
 
@@ -35,7 +39,7 @@ CREATE DATABASE ODS;
 USE ODS;
 ````
 
-## CREAR LA TABLA 'USERS' BASADA EN TU ESTRUCTURA
+### CREAR LA TABLA 'USERS' BASADA EN TU ESTRUCTURA
 
 ```sql
 CREATE TABLE users (
@@ -51,7 +55,7 @@ CREATE TABLE users (
 );
 
 ````
-## INSERTAR USUARIOS EN LA TABLAT 'USERS'
+### INSERTAR USUARIOS EN LA TABLAT 'USERS'
 ```sql
 INSERT INTO users(name, surnames, identification_document, document_number, email, cellular) 
 VALUES 
